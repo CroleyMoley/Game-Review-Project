@@ -1,0 +1,25 @@
+Review site for video games where users sign up and can create a new game, add a review, or add a review
+for existing game created by other users
+
+User 
+    Username
+    Password
+    has_many Reviews
+    has_many games through reviews
+
+Game 
+    game_name
+    belongs_to Genre 
+    has_many users through reviews
+    has_many reviews 
+
+Genre 
+    genre_name
+    has_many games 
+
+Reviews
+    user_id
+    game_id
+    rating
+    title
+    content
