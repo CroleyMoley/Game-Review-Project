@@ -9,6 +9,7 @@ User
 
 Game 
     game_name
+    belongs_to user
     belongs_to Genre 
     has_many users through reviews
     has_many reviews 
