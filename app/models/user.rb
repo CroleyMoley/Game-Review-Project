@@ -3,4 +3,6 @@ class User < ApplicationRecord
     has_many :reviewed_games, through: :reviews, source: :game
     has_many :games
     has_secure_password
+    validates :username, uniqueness: true, presence: true 
+    
 end
