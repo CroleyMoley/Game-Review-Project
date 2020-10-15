@@ -13,8 +13,12 @@ class GamesController < ApplicationController
        end 
     end
 
+    def show 
+
+    end
+
     private
     def game_params
-        params.require(game).permit(:game_name, :genre_id, genre_attributes: [:genre_name])
+        params.require(:game).permit(:game_name, :genre_id, genre_attributes: [:genre_name])
     end
 end
