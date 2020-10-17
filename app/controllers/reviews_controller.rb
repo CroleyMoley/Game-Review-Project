@@ -8,7 +8,21 @@ class ReviewsController < ApplicationController
     end
 
     def index
-        
+
+    end
+
+    def create 
+        Review.create(review_params)
+        redirect_to review_path(@review)
+    end
+
+    def show 
+        @review = Review.find_by_id(params[:id])
+    end
+
+    private
+    def review_params
+        params.require(:review).permit(:game_id, :content, rating, :title)
     end
 
 
