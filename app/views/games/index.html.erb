@@ -1,0 +1,5 @@
+<h1>Index for games</h1>
+
+<% @games.each do |ga| %>
+    <h2><%= ga.game_name %> - <%= ga.genre.genre_name %></h2>
+<% end %>
