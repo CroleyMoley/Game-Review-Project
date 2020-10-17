@@ -1,1 +1,32 @@
-<h1>New Review Form</h1>
+<% if params[:game_id] %>
+    <h1>Add a new Review for <%= @review.game.game_name %> - <%= @review.game.genre.genre_name %></h1>
+<% else %>
+    <h1>Create a Review</h1>
+<% end %>
+
+<%= form_for(@review) do |f| %>
+    <% if params[:game_id] %>
+    <%= f.hidden_field :game_id %>
+    <% else %>
+    <div>
+        <%= f.label :game_id, "Select a Game" %>
+        <%= f.collection_select :game_id, Game.all, :id, :game_name %>
+    </div>
+    <% end %>
+    <div>
+        <%= f.label :score %>
+        <%= f.number_field :rating, min:0, max:10 %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :content %>
+        <%= f.text_area :content, size: "50x10" %>
+    </div>
+    <br>
+    <%= f.submit %>
+<% end %>
