@@ -2,4 +2,5 @@
 
 <% @games.each do |ga| %>
     <h2><%= ga.game_name %> - <%= ga.genre.genre_name %></h2>
+    <%= link_to "Write a Review", new_game_review_path(ga.id) %>
 <% end %>
