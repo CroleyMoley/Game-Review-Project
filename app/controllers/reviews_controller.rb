@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
         if @game = Game.find_by_id(params[:game_id])
         @review = @game.reviews.build
         else
-            @review = Review.build
+            @review = Review.new
         end
     end
 
@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     end
 
     def create 
-        @review = Review.create(review_params)
+        @review = current_user.reviews.build(review_params)
         if @review.save
             redirect_to review_path(@review)
         else
