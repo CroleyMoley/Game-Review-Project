@@ -8,12 +8,20 @@ class ReviewsController < ApplicationController
     end
 
     def index
-
+        if @game = Game.find_by_id(params[:game_id])
+            @reviews = Game.reviews
+        else
+            @reviews = Review.all 
+        end
     end
 
     def create 
         @review = Review.create(review_params)
-        redirect_to review_path(@review)
+        if @review.save
+            redirect_to review_path(@review)
+        else
+            render :new
+        end
     end
 
     def show 
@@ -22,7 +30,7 @@ class ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:game_id, :content, rating, :title)
+        params.require(:review).permit(:game_id, :content, :rating, :title)
     end
 
 

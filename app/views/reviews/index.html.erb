@@ -1,0 +1,7 @@
+<h1>Review Index</h1>
+
+<ul>
+    <% @reviews.each do |r| %>
+    <li><%= r.game.game_name %>: <%= r.title %> - <%= r.rating %></li> <br>
+    <% end %>
+</ul>
