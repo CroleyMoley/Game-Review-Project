@@ -10,7 +10,7 @@
     <% else %>
     <div>
         <%= f.label :game_id, "Select a Game" %>
-        <%= f.collection_select :game_id, Game.all, :id, :game_name %>
+        <%= f.collection_select :game_id, Game.all, :id, :game_name, include_blank: true %>
     </div>
     <% end %>
     <div>
