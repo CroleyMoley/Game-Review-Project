@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
         if @game = Game.find_by_id(params[:game_id])
             @reviews = @game.reviews
         else
-            @reviews = Review.all 
+            @reviews = Review.all.order(rating: :desc)
         end
     end
 

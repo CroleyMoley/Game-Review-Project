@@ -14,7 +14,7 @@ class GamesController < ApplicationController
     end
 
     def index 
-        @games = Game.all 
+        @games = Game.all.order(:game_name) 
     end
 
     def show 
