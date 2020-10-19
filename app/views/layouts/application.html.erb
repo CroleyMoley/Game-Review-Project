@@ -12,6 +12,13 @@
   <div>
     <% if logged_in? %>
     <%= link_to "Logout", logout_path, method: :delete %>
+    <br>
+    <%= link_to "View All Games", games_path %>
+    <br>
+    <%= link_to "All Reviews", reviews_path %>
+    <br>
+    <%= link_to "View All Genres", genres_path %>
+    
     <% end %>
   </div>
 
