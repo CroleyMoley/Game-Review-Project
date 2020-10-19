@@ -5,4 +5,9 @@ class Game < ApplicationRecord
     has_many :users, through: :reviews
     accepts_nested_attributes_for :genre
     validates :game_name, uniqueness: true, presence: true
+
+    def game_name_and_genre
+        "#{game_name} - #{genre.genre_name}"
+    end
+
 end
