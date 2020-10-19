@@ -10,4 +10,8 @@ class Game < ApplicationRecord
         "#{game_name} - #{genre.genre_name}"
     end
 
+    def self.alpha
+        order(:game_name)
+    end
+
 end
