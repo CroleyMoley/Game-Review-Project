@@ -1,4 +1,8 @@
-<h1>All Reviewed Games</h1>
+<% if @game %>
+    <h1>Reviews for <%= @game.game_name %> - <%= @game.genre.genre_name %></h1>
+<% else %>
+    <h1>All Reviewed Games</h1>
+<% end %>
 
 <ul>
     <% @reviews.each do |r| %>

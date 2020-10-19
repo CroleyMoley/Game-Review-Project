@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
 
     def index
         if @game = Game.find_by_id(params[:game_id])
-            @reviews = Game.reviews
+            @reviews = @game.reviews
         else
             @reviews = Review.all 
         end
