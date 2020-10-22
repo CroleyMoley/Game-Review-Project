@@ -14,6 +14,7 @@ class GamesController < ApplicationController
     end
 
     def index 
+        #@user = User.find_by_id(params[:id]
         @games = Game.all.order(:game_name) 
     end
 
