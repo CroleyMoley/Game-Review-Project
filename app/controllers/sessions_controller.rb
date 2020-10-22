@@ -29,6 +29,7 @@ class SessionsController < ApplicationController
             u.password = SecureRandom.hex
         end
         session[:user_id] = @user.id
+        redirect_to user_path(@user)
     end
 
     private
