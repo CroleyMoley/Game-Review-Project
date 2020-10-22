@@ -24,4 +24,8 @@ class SessionsController < ApplicationController
         redirect_to '/'
     end
 
+    def omniauth
+        
+    end
+
 end
