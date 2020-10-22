@@ -25,7 +25,16 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        
+        @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+            u.password = SecureRandom.hex
+        end
+        session[:user_id] = @user.id
     end
+
+    private
+
+        def auth
+            request.env['omniauth.auth']
+        end
 
 end
