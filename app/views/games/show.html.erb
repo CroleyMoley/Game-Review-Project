@@ -1,2 +1,3 @@
 <h1><%= @game.game_name %> - <%= @game.genre.genre_name %></h1>
 <h2>Leave a review for this game <%= link_to 'here!', new_review_path %></h2>
+<%= link_to @reviews.title, review_path %> - <%= @reviews.rating%>

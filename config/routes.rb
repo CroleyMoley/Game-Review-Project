@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   resources :reviews
   resources :games do 
-    resources :reviews, only: [:new, :index]
+    resources :reviews, only: [:new, :index, :show]
   end
   resources :genres
   resources :users

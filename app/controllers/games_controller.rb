@@ -14,12 +14,12 @@ class GamesController < ApplicationController
     end
 
     def index 
-        #@user = User.find_by_id(params[:id]
         @games = Game.all.order(:game_name) 
     end
 
     def show 
-        @game = Game.find_by_id(params[:id])
+        @reviews = Review.find_by(id: params[:id])
+        @game = Game.find_by_id(params[:id])     
     end
 
     private
