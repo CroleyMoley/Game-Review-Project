@@ -19,7 +19,7 @@ class GamesController < ApplicationController
 
     def show 
         @reviews = Review.find_by(id: params[:id])
-        @game = Game.find_by_id(params[:id])     
+        @game = Game.find_by(id: params[:id])     
     end
 
     private

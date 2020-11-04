@@ -1,6 +1,6 @@
 <h1>Sign Up Successful, Welcome! </h1>
 <h3>Is your game missing?<%= link_to "Add a Game", new_game_path %></h3>
 <% @games.each do |ga| %>
-    <h2><%= link_to ga.game_name, game_path(ga) %> - <%= ga.genre.genre_name %></h2>
+    <h2><%= link_to ga.game_name, game_reviews_path(ga) %> - <%= ga.genre.genre_name %></h2>
     <%= link_to "Write a Review", new_game_review_path(ga.id) %>
 <% end %>

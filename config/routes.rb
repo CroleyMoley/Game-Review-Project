@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   delete '/logout' => 'sessions#destroy'
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
-  resources :reviews
+  resources :reviews 
   resources :games do 
     resources :reviews, only: [:new, :index, :show]
   end

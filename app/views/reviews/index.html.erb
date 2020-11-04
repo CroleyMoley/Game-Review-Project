@@ -5,8 +5,8 @@
 <% end %>
 <h3>See a Game you would like to review? Tell us what you think and <%=link_to "leave a review!", new_review_path %></h3>
 <h3>Maybe you don't see the game you want to review? <%= link_to "Add a New Game!", new_game_path %></h3>
-<ul>
+<ol>
     <% @reviews.each do |r| %>
     <li><%= r.game.game_name %>: <%= link_to r.title, review_path(r) %> - <%= r.rating %></li> <br>
     <% end %>
-</ul>
+</ol>
