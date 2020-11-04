@@ -7,8 +7,6 @@ class Review < ApplicationRecord
   
   validates :game, uniqueness: { scope: :user, message: "has already been reviewed by you" }
 
-  def self.alpha
-    order(:title)
-  end
+  
 
 end
